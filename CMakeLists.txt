@@ -8,7 +8,7 @@ project(tf2_utils)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  tf2_ros
+  #tf2_ros
 )
 
 ## System dependencies are found with CMake's conventions
@@ -101,9 +101,9 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
+  INCLUDE_DIRS include
 #  LIBRARIES tf2_utils
-#  CATKIN_DEPENDS tf2_ros
+  CATKIN_DEPENDS tf2_ros
 #  DEPENDS system_lib
 )
 
