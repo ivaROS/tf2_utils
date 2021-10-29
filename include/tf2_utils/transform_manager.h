@@ -7,7 +7,7 @@
 
 namespace tf2_utils
 {
-  
+
   class TransformManager
   {
     std::shared_ptr<tf2_ros::Buffer> buffer_;
@@ -20,8 +20,14 @@ namespace tf2_utils
       listener_ = std::make_shared<tf2_ros::TransformListener>(*buffer_, nh);
     }
     
-  public:
-    
+public:
+  
+    static TransformManager NoListener(ros::Duration buffer_size=ros::Duration(tf2::BufferCore::DEFAULT_CACHE_TIME))
+    {
+      TransformManager tf;
+      tf.buffer_ = std::make_shared<tf2_ros::Buffer>(buffer_size);
+      return tf;
+    }
 
     TransformManager(ros::Duration buffer_size)
     {
@@ -61,8 +67,7 @@ namespace tf2_utils
     }
     
   };
-  
+
 } //end namespace tf2_utils
 
 #endif //TF2_UTILS_TRANSFORM_MANAGER_H
-
