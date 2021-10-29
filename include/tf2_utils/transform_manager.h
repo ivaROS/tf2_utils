@@ -1,6 +1,7 @@
 #ifndef TF2_UTILS_TRANSFORM_MANAGER_H
 #define TF2_UTILS_TRANSFORM_MANAGER_H
 
+#include <memory>
 #include <tf2_ros/buffer_interface.h>
 #include <tf2_ros/transform_listener.h>
 
@@ -11,7 +12,7 @@ namespace tf2_utils
   {
     std::shared_ptr<tf2_ros::Buffer> buffer_;
     std::shared_ptr<tf2_ros::TransformListener> listener_;
-    
+
     
     void initialize(ros::NodeHandle nh=ros::NodeHandle(), ros::Duration buffer_size=ros::Duration(tf2::BufferCore::DEFAULT_CACHE_TIME))
     {
@@ -21,7 +22,7 @@ namespace tf2_utils
     
   public:
     
-    
+
     TransformManager(ros::Duration buffer_size)
     {
       ros::NodeHandle nh;
@@ -64,3 +65,4 @@ namespace tf2_utils
 } //end namespace tf2_utils
 
 #endif //TF2_UTILS_TRANSFORM_MANAGER_H
+
